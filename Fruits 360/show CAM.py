@@ -174,6 +174,7 @@ def plot_single_CAM(model, class_name=None, class_index=None, image_path=None):
     if image_path is not None:
         img_path = os.path.join(os.getcwd(), image_path)
         class_name = os.path.abspath(os.path.join(img_path, os.pardir))
+        class_list = extract_labels(os.path.join(r'fruits-360\test'))
     else:
         # get` test path and class names
         test_path = os.path.join(os.getcwd(), r'fruits-360\test')
@@ -298,7 +299,7 @@ def save_class_CAM_2x2(model, class_name, file_name='test.png', show=False):
 
 
 # runtime logic
-plot_single_CAM(loaded_model, class_index=0)
+plot_single_CAM(loaded_model, image_path=r"C:\Users\bchauhan22\Downloads\download.png")
 exit()
 
 # clear list
