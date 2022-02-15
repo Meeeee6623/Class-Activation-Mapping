@@ -161,15 +161,28 @@ def plot_class_activation_map(CAM, image, show=True, data_path=test_data_dir, cl
         plt.show()
 
 
-def plot_single_class_CAM(model, class_name=None, class_index=None):
-    # get test path and class names
-    test_path = os.path.join(os.getcwd(), r'fruits-360\test')
-    class_list = extract_labels(test_path)
-    if class_name is None:
-        class_name = class_list[class_index]
-    class_path = os.path.join(test_path, class_name)
+def plot_single_CAM(model, class_name=None, class_index=None, image_path=None):
+    """
+    Chooses two random images from the specified class, classifies them with the given model, and saves them along with their CAM data in a 2x2 grid.
+    Inputs:
+        1) model (loaded keras model) : used to classify images and get CAM data
+        2) class_name (string) : class to get images from to classify
+        4) file_name (string) : name of file to save plot as
+        5) image_path (string) : (optional) path to an image. Used to classify a specific image instead of one chosen at random from the given class.
 
-    img_path = os.path.join(class_path, np.random.choice(os.listdir(class_path)))
+    """
+    if image_path is not None:
+        img_path = os.path.join(os.getcwd(), image_path)
+        class_name = os.path.abspath(os.path.join(img_path, os.pardir))
+    else:
+        # get` test path and class names
+        test_path = os.path.join(os.getcwd(), r'fruits-360\test')
+        class_list = extract_labels(test_path)
+        if class_name is None:
+            class_name = class_list[class_index]
+        class_path = os.path.join(test_path, class_name)
+        img_path = os.path.join(class_path, np.random.choice(os.listdir(class_path)))
+
     img = mpl.image.imread(img_path)
 
     # fit to right size
@@ -285,7 +298,7 @@ def save_class_CAM_2x2(model, class_name, file_name='test.png', show=False):
 
 
 # runtime logic
-plot_single_class_CAM(loaded_model, class_index=0)
+plot_single_CAM(loaded_model, class_index=0)
 exit()
 
 # clear list
