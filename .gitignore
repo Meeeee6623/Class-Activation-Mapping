@@ -1,0 +1,7 @@
+*.idea
+# dataset
+/Fruits 360/fruits-360/
+# testing plot folder
+/Fruits 360/test/
+# trained classifier model
+/Fruits 360/Trained Fruits Model/

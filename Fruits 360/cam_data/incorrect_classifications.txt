@@ -1,0 +1,6 @@
+Corn: C:\Users\cbenj\Documents\Classification Project\Fruits 360\fruits-360\test\Corn\r2_160_100.jpg
+Corn: C:\Users\cbenj\Documents\Classification Project\Fruits 360\fruits-360\test\Corn\r_158_100.jpg
+Tomato not Ripened: C:\Users\cbenj\Documents\Classification Project\Fruits 360\fruits-360\test\Tomato not Ripened\162_100.jpg
+Tomato not Ripened: C:\Users\cbenj\Documents\Classification Project\Fruits 360\fruits-360\test\Tomato not Ripened\r_0_100.jpg
+Tomato Yellow: C:\Users\cbenj\Documents\Classification Project\Fruits 360\fruits-360\test\Tomato Yellow\0_100.jpg
+Tomato Yellow: C:\Users\cbenj\Documents\Classification Project\Fruits 360\fruits-360\test\Tomato Yellow\r2_44_100.jpg
