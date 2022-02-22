@@ -33,16 +33,19 @@ if not os.path.exists(model_path):
 # image info
 img_width, img_height = 224, 224
 
-train_data_dir = os.path.join(path, rf'{dataset}\train')
+data_dir = os.path.join(path, rf'{dataset}')
 test_data_dir = os.path.join(path, rf'{dataset}\test')
 
 (ds_train, ds_test), ds_info = tfds.load(
     'mnist',
+    data_dir=data_dir,
     split=['train', 'test'],
     shuffle_files=True,
     as_supervised=True,
     with_info=True,
 )
+
+exit()
 
 batch_size = 16
 
